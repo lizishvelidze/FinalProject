@@ -3,20 +3,34 @@ The Loan Management API is a system designed to manage loan applications, user r
 
 ## Features
 User Registration & Login: Users and accountants can register and log in.
+
 Loan Management: Accountants can view all loans, update their statuses, and delete loans.
+
 User Profile Management: Both users and accountants can access user profiles.
-Table of Contents
+
+## Table of Contents
 Prerequisites
+
 Installation
+
 Running the Application
+
 API Endpoints
+
 User Endpoints
+
 Accountant Endpoints
+
 Authentication
+
 Testing
+
 Deployment
+
 Contributing
+
 License
+
 Prerequisites
 ## Before getting started, make sure you have the following installed:
 
