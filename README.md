@@ -67,6 +67,7 @@ User Endpoints
 1. **Register a User**
 
 Method: POST
+
 URL: /api/user/register
 Request Body:
 ```bash
@@ -84,6 +85,7 @@ Description: Registers a new user. Returns the user details excluding the passwo
 2. **Login a User**
 
 Method: POST
+
 URL: /api/user/login
 Request Body:
 ```bash
@@ -97,8 +99,11 @@ Description: Logs in a user by verifying the credentials and returns a JWT token
 3. **Get User Profile**
 
 Method: GET
+
 URL: /api/user/profile
+
 Authentication: Bearer token
+
 Description: Retrieves the user's profile information, including all associated loans.
 
 4. **Get User By ID**
