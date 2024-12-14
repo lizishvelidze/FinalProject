@@ -6,7 +6,7 @@ Loan API is a system designed to manage loan applications, user registrations, a
 
 * Loan Management: Accountants can view all loans, update their statuses, block them and delete loans.
 
-* User Profile Management: Both users and accountants can access user profiles.
+* User Profile Management: Users can only access their own profiles, while accountants can check and see everyones profiles.
 
 ## Table of Contents
 1. Prerequisites
