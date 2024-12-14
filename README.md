@@ -15,9 +15,9 @@ Loan API is a system designed to manage loan applications, user registrations, a
 
 3. Running the Application
 
-* API Endpoints
+   * API Endpoints
 
-* User Endpoints
+   * User Endpoints
 
 4. Accountant Endpoints
 
