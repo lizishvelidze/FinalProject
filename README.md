@@ -198,7 +198,7 @@ dotnet run
 Authorization: Bearer <your-jwt-token>
 ```
 ## Testing
-###To run the automated tests for this application:
+### To run the automated tests for this application:
 
 1. Run unit tests:
 
