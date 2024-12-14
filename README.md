@@ -40,11 +40,11 @@ To get started with the Loan Management API, follow these steps:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/LoanManagementAPI.git
+git clone https://github.com/lizishvelidze/FinalProject.git
 ```
 2. **Navigate to the project folder:**
 ```bash
-cd LoanManagementAPI
+cd test4
 ```
 3. **Restore dependencies:**
 ```bash
