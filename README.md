@@ -1,4 +1,4 @@
-# Loan Management API
+# Loan API
 The Loan Management API is a system designed to manage loan applications, user registrations, account management for both regular users and accountants, and loan-related operations. It allows users to register, apply for loans, and view their profiles, while accountants can manage loan statuses and block users.
 
 ## Features
