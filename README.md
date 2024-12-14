@@ -69,6 +69,7 @@ User Endpoints
 Method: POST
 
 URL: /api/user/register
+
 Request Body:
 ```bash
 {
@@ -87,6 +88,7 @@ Description: Registers a new user. Returns the user details excluding the passwo
 Method: POST
 
 URL: /api/user/login
+
 Request Body:
 ```bash
 {
@@ -109,15 +111,20 @@ Description: Retrieves the user's profile information, including all associated 
 4. **Get User By ID**
 
 Method: GET
+
 URL: /api/user/{id}
+
 Authentication: Bearer token
+
 Description: Fetches the profile of a specific user by their ID, including associated loans.
 
 Accountant Endpoints
 1. **Register an Accountant**
 
 Method: POST
+
 URL: /api/user/register-accountant
+
 Request Body:
 ```bash
 {
@@ -135,7 +142,9 @@ Description: Registers a new accountant.
 2. **Accountant Login**
 
 Method: POST
+
 URL: /api/user/accountant-login
+
 Request Body:
 ```bash
 {
@@ -148,14 +157,19 @@ Description: Logs in an accountant by verifying their credentials and returns a 
 3. **Get All Loans**
  
 Method: GET
+
 URL: /api/accountant/all-loans
+
 Authentication: Bearer token (Accountant role required)
+
 Description: Fetches a list of all loans available in the system.
 
 4. **Update Loan Status**
 
 Method: PUT
+
 URL: /api/accountant/loans/{loanId}/update-status
+
 Request Body:
 ```bash
 {
@@ -167,8 +181,11 @@ Description: Updates the status of a specific loan.
 5. **Block User**
 
 Method: PUT
+
 URL: /api/accountant/users/{userId}/block
+
 Request Query Parameter: blockDurationDays=30 (Optional, default is 30 days)
+
 Description: Blocks a user for a given number of days.
 
 ##Authentication
@@ -190,9 +207,12 @@ dotnet test
 This will execute all the unit tests and provide feedback on whether the tests passed or failed.
 
 ##Built With
-.NET Core - The framework used for building the API
+.NET Core - The framework used for building the API 
+
 Entity Framework Core - ORM used for database operations
+
 JWT - Authentication using JSON Web Tokens
+
 SQL Server - Database used for storing user and loan information
 
 ##License
@@ -200,4 +220,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ##Acknowledgments
 Hat tip to the developers whose code and ideas helped build this system.
+
 Special thanks to the contributors who reviewed and improved this project.
