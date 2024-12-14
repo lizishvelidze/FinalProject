@@ -25,10 +25,6 @@ Authentication
 
 Testing
 
-Deployment
-
-Contributing
-
 License
 
 Prerequisites
@@ -73,6 +69,7 @@ User Endpoints
 Method: POST
 URL: /api/user/register
 Request Body:
+```bash
 {
   "username": "john_doe",
   "firstName": "John",
@@ -82,18 +79,19 @@ Request Body:
   "age": 30,
   "monthlyIncome": 3000
 }
+```
 Description: Registers a new user. Returns the user details excluding the password upon successful registration.
 2. **Login a User**
 
 Method: POST
 URL: /api/user/login
 Request Body:
-json
-Copy code
+```bash
 {
   "username": "john_doe",
   "password": "securepassword123"
 }
+```
 Description: Logs in a user by verifying the credentials and returns a JWT token.
 
 3. **Get User Profile**
@@ -116,6 +114,7 @@ Accountant Endpoints
 Method: POST
 URL: /api/user/register-accountant
 Request Body:
+```bash
 {
   "username": "accountant_jane",
   "firstName": "Jane",
@@ -125,6 +124,7 @@ Request Body:
   "age": 40,
   "monthlyIncome": 5000
 }
+```
 Description: Registers a new accountant.
 
 2. **Accountant Login**
@@ -132,10 +132,12 @@ Description: Registers a new accountant.
 Method: POST
 URL: /api/user/accountant-login
 Request Body:
+```bash
 {
   "username": "accountant_jane",
   "password": "adminpassword123"
 }
+```
 Description: Logs in an accountant by verifying their credentials and returns a JWT token.
 
 3. **Get All Loans**
@@ -144,14 +146,17 @@ Method: GET
 URL: /api/accountant/all-loans
 Authentication: Bearer token (Accountant role required)
 Description: Fetches a list of all loans available in the system.
+
 4. **Update Loan Status**
 
 Method: PUT
 URL: /api/accountant/loans/{loanId}/update-status
 Request Body:
+```bash
 {
   "status": "Approved"
 }
+```
 Description: Updates the status of a specific loan.
 
 5. **Block User**
@@ -168,39 +173,22 @@ Description: Blocks a user for a given number of days.
 
 Authorization: Bearer <your-jwt-token>
 ```
-Testing
-To run the automated tests for this application:
+##Testing
+###To run the automated tests for this application:
 
-Run unit tests:
+1. Run unit tests:
 
 Run the following command in your terminal:
-bash
-Copy code
+```bash
 dotnet test
+```
 This will execute all the unit tests and provide feedback on whether the tests passed or failed.
-
-Deployment
-For deployment, follow these steps to publish and deploy your application:
-
-Publish the application:
-
-bash
-
-dotnet publish --configuration Release --output ./publish
-Deploy to your preferred server (e.g., Azure, AWS, etc.).
 
 ##Built With
 .NET Core - The framework used for building the API
 Entity Framework Core - ORM used for database operations
 JWT - Authentication using JSON Web Tokens
 SQL Server - Database used for storing user and loan information
-Contributing
-We welcome contributions to this project! If you'd like to contribute, please fork the repository and create a pull request with your changes. Make sure to follow the guidelines outlined below:
-
-Write unit tests for new features.
-Document your code clearly.
-Ensure that the build passes before submitting a pull request.
-For more detailed instructions, please read our CONTRIBUTING.md.
 
 ##License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
