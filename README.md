@@ -1,24 +1,196 @@
-# Loan Management System API
+# Loan Management API
+The Loan Management API is a system designed to manage loan applications, user registrations, account management for both regular users and accountants, and loan-related operations. It allows users to register, apply for loans, and view their profiles, while accountants can manage loan statuses and block users.
 
-This is a Loan Management System API that allows users to register, log in, manage their profiles, and interact with loans. The API is built using ASP.NET Core and supports JWT authentication and role-based access control for regular users and accountants.
+## Features
+User Registration & Login: Users and accountants can register and log in.
+Loan Management: Accountants can view all loans, update their statuses, and delete loans.
+User Profile Management: Both users and accountants can access user profiles.
+Table of Contents
+Prerequisites
+Installation
+Running the Application
+API Endpoints
+User Endpoints
+Accountant Endpoints
+Authentication
+Testing
+Deployment
+Contributing
+License
+Prerequisites
+## Before getting started, make sure you have the following installed:
 
-## Getting Started
+.NET (version 5.0 or later)
+Postman or another API testing tool (optional)
+SQL Server or an alternative database management system (optional, for production environments)
 
-These instructions will guide you through setting up the project on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Before getting started, ensure you have the following tools installed:
-
-- **.NET 5 or higher**: [Install .NET](https://dotnet.microsoft.com/download)
-- **Visual Studio or Visual Studio Code**: [Install Visual Studio](https://visualstudio.microsoft.com/)
-- **Postman or any API testing tool** for testing API endpoints
-
-### Installing
+### Installation
+To get started with the Loan Management API, follow these steps:
 
 1. **Clone the repository:**
+```bash
+git clone https://github.com/yourusername/LoanManagementAPI.git
+```
+2. **Navigate to the project folder:**
+```bash
+cd LoanManagementAPI
+```
+3. **Restore dependencies:**
+```bash
+dotnet restore
+```
+4. **Run the application:**
+```bash
+dotnet run
+```
+The application will start running on http://localhost:5000 by default.
 
-   Open your terminal and run the following command to clone the repository.
+5. **Running the Application**
+To start the application, use the command:
+```bash
+dotnet run
+```
+This will start the API on http://localhost:5000 (or another port if configured).
 
-   ```bash
-   git clone https://github.com/your-repository-link.git
+API Endpoints
+User Endpoints
+1. **Register a User**
+
+Method: POST
+URL: /api/user/register
+Request Body:
+{
+  "username": "john_doe",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "securepassword123",
+  "age": 30,
+  "monthlyIncome": 3000
+}
+Description: Registers a new user. Returns the user details excluding the password upon successful registration.
+2. **Login a User**
+
+Method: POST
+URL: /api/user/login
+Request Body:
+json
+Copy code
+{
+  "username": "john_doe",
+  "password": "securepassword123"
+}
+Description: Logs in a user by verifying the credentials and returns a JWT token.
+
+3. **Get User Profile**
+
+Method: GET
+URL: /api/user/profile
+Authentication: Bearer token
+Description: Retrieves the user's profile information, including all associated loans.
+
+4. **Get User By ID**
+
+Method: GET
+URL: /api/user/{id}
+Authentication: Bearer token
+Description: Fetches the profile of a specific user by their ID, including associated loans.
+
+Accountant Endpoints
+1. **Register an Accountant**
+
+Method: POST
+URL: /api/user/register-accountant
+Request Body:
+{
+  "username": "accountant_jane",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "password": "adminpassword123",
+  "age": 40,
+  "monthlyIncome": 5000
+}
+Description: Registers a new accountant.
+
+2. **Accountant Login**
+
+Method: POST
+URL: /api/user/accountant-login
+Request Body:
+{
+  "username": "accountant_jane",
+  "password": "adminpassword123"
+}
+Description: Logs in an accountant by verifying their credentials and returns a JWT token.
+
+3. **Get All Loans**
+ 
+Method: GET
+URL: /api/accountant/all-loans
+Authentication: Bearer token (Accountant role required)
+Description: Fetches a list of all loans available in the system.
+4. **Update Loan Status**
+
+Method: PUT
+URL: /api/accountant/loans/{loanId}/update-status
+Request Body:
+{
+  "status": "Approved"
+}
+Description: Updates the status of a specific loan.
+
+5. **Block User**
+
+Method: PUT
+URL: /api/accountant/users/{userId}/block
+Request Query Parameter: blockDurationDays=30 (Optional, default is 30 days)
+Description: Blocks a user for a given number of days.
+
+##Authentication
+###The API uses JWT (JSON Web Tokens) for authentication. To log in, users and accountants must send a POST request to the login endpoints, receiving a token in response. This token should be included in the Authorization header of all subsequent requests, formatted as follows:
+
+```bash
+
+Authorization: Bearer <your-jwt-token>
+```
+Testing
+To run the automated tests for this application:
+
+Run unit tests:
+
+Run the following command in your terminal:
+bash
+Copy code
+dotnet test
+This will execute all the unit tests and provide feedback on whether the tests passed or failed.
+
+Deployment
+For deployment, follow these steps to publish and deploy your application:
+
+Publish the application:
+
+bash
+
+dotnet publish --configuration Release --output ./publish
+Deploy to your preferred server (e.g., Azure, AWS, etc.).
+
+##Built With
+.NET Core - The framework used for building the API
+Entity Framework Core - ORM used for database operations
+JWT - Authentication using JSON Web Tokens
+SQL Server - Database used for storing user and loan information
+Contributing
+We welcome contributions to this project! If you'd like to contribute, please fork the repository and create a pull request with your changes. Make sure to follow the guidelines outlined below:
+
+Write unit tests for new features.
+Document your code clearly.
+Ensure that the build passes before submitting a pull request.
+For more detailed instructions, please read our CONTRIBUTING.md.
+
+##License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+##Acknowledgments
+Hat tip to the developers whose code and ideas helped build this system.
+Special thanks to the contributors who reviewed and improved this project.
