@@ -191,7 +191,7 @@ dotnet run
 * Description: Blocks a user for a given number of days.
 
 ## Authentication
-### The API uses JWT (JSON Web Tokens) for authentication. To log in, users and accountants must send a POST request to the login endpoints, receiving a token in response. This token should be included in the Authorization header of all subsequent requests, formatted as follows:
+#### The API uses JWT (JSON Web Tokens) for authentication. To log in, users and accountants must send a POST request to the login endpoints, receiving a token in response. This token should be included in the Authorization header of all subsequent requests, formatted as follows:
 
 ```bash
 
