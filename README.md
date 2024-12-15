@@ -25,9 +25,7 @@ Loan API is a system designed to manage loan applications, user registrations, a
 
 6. Testing
 
-7. License
-
-8. Acknowledgments
+7. Acknowledgments
 
 ## Before getting started, make sure you have the following installed:
 
@@ -216,9 +214,6 @@ dotnet test
 * JWT - Authentication using JSON Web Tokens
 
 * SQL Server - Database used for storing user and loan information
-
-## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Acknowledgments
 Hat tip to the developers whose code and ideas helped build this system.
